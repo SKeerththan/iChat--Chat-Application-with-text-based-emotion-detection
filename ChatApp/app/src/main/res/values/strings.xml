@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">iChat</string>
+    <string name="default_web_clinent_id">134913192510-lk7oamh7ro2e82037orsu05b7dnp6ql3.apps.googleusercontent.com</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

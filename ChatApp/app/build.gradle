@@ -1,0 +1,110 @@
+plugins {
+    id 'com.android.application'
+    id 'com.chaquo.python'
+    id 'com.google.gms.google-services'
+
+
+
+}
+
+android {
+
+
+    compileSdk 32
+    useLibrary 'org.apache.http.legacy'
+    defaultConfig {
+        applicationId "keerththan.sk.ichat"
+        minSdk 19
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+        ndk {
+            abiFilters "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
+        }
+        python {
+            buildPython "C:/Users/Jarvis/AppData/Local/Programs/Python/Python310/python.exe"
+            pip {
+
+
+                install "requests"
+            }
+
+
+        }
+        android {
+            sourceSets {
+                main {
+                    python.srcDir "src/main/python"
+                }
+            }
+        }
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    packagingOptions {
+        exclude 'project.properties'
+        exclude 'META-INF/INDEX.LIST'
+    }
+
+
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.4.2'
+    implementation 'com.google.android.material:material:1.6.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'com.google.firebase:firebase-auth:21.0.5'
+    implementation platform('com.google.firebase:firebase-bom:30.1.0')
+    implementation 'com.google.firebase:firebase-database'
+    implementation 'com.google.firebase:firebase-storage:20.0.1'
+
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    implementation 'com.google.android.gms:play-services-auth:20.2.0'
+
+
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation 'com.squareup.picasso:picasso:2.8'
+
+    implementation 'com.google.mlkit:translate:17.0.0'
+    implementation 'com.google.mlkit:language-id:17.0.3'
+    implementation 'com.google.android.gms:play-services-mlkit-language-id:17.0.0-beta1'
+
+
+
+
+    implementation 'com.google.firebase:firebase-ml-natural-language:latest.release'
+    implementation 'com.google.firebase:firebase-ml-natural-language-language-id-model:latest.release'
+
+
+    implementation('com.google.cloud:google-cloud-translate:2.2.0') {
+        //noinspection DuplicatePlatformClasses
+        exclude group: 'org.apache.httpcomponents'
+        exclude group: 'org.json', module: 'json'
+    }
+    annotationProcessor 'com.google.cloud:google-cloud-translate:2.2.0'
+
+
+}

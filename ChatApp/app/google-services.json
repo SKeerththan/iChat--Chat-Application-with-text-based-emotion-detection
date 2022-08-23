@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "134913192510",
+    "firebase_url": "https://ichat-application-73322-default-rtdb.firebaseio.com",
+    "project_id": "ichat-application-73322",
+    "storage_bucket": "ichat-application-73322.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:134913192510:android:92a19a5a6653e0de2c576f",
+        "android_client_info": {
+          "package_name": "keerththan.sk.ichat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "134913192510-i0qu30h4pt6h6pihrsjn7umqtmc4dkks.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "keerththan.sk.ichat",
+            "certificate_hash": "84f4cdadd9f7568506a767b61d223e5c91f9ba74"
+          }
+        },
+        {
+          "client_id": "134913192510-lk7oamh7ro2e82037orsu05b7dnp6ql3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAf74sPt4qiyLw5XgmjGq1Jp8_exBmBQA4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "134913192510-lk7oamh7ro2e82037orsu05b7dnp6ql3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/ChatApp/app/src/main/res/drawable/about.xml" value="0.1" />
+        <entry key="..\:/ChatApp/app/src/main/res/drawable/bg_et_message.xml" value="0.1" />
+        <entry key="..\:/ChatApp/app/src/main/res/drawable/bg_reciver.xml" value="0.1" />
+        <entry key="..\:/ChatApp/app/src/main/res/drawable/bg_sender.xml" value="0.1" />
+        <entry key="..\:/ChatApp/app/src/main/res/drawable/btn_bg.xml" value="0.1" />
+        <entry key="..\:/ChatApp/app/src/main/res/drawable/liner_bg.xml" value="0.1" />
+        <entry key="..\:/ChatApp/app/src/main/res/layout/activity_chat_detail.xml" value="0.264" />
+        <entry key="..\:/ChatApp/app/src/main/res/layout/activity_group_chat.xml" value="0.1" />
+        <entry key="..\:/ChatApp/app/src/main/res/layout/activity_main.xml" value="0.16" />
+        <entry key="..\:/ChatApp/app/src/main/res/layout/activity_settings.xml" value="0.2" />
+        <entry key="..\:/ChatApp/app/src/main/res/layout/activity_sign_in.xml" value="0.16799999999999998" />
+        <entry key="..\:/ChatApp/app/src/main/res/layout/activity_sign_up.xml" value="0.1" />
+        <entry key="..\:/ChatApp/app/src/main/res/layout/fragment_calls.xml" value="0.1" />
+        <entry key="..\:/ChatApp/app/src/main/res/layout/fragment_chats.xml" value="0.2" />
+        <entry key="..\:/ChatApp/app/src/main/res/layout/sample_reciver.xml" value="0.5342465753424658" />
+        <entry key="..\:/ChatApp/app/src/main/res/layout/sample_sender.xml" value="0.4" />
+        <entry key="..\:/ChatApp/app/src/main/res/layout/sample_show_user.xml" value="0.176" />
+        <entry key="..\:/ChatApp/app/src/main/res/menu/menu.xml" value="0.16" />
+        <entry key="..\:/ChatApp/app/src/main/res/xml/strings.xml" value="0.24635416666666668" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
