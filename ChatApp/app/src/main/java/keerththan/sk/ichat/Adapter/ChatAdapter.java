@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -155,7 +156,8 @@ public class ChatAdapter extends RecyclerView.Adapter {
                             Log.i("TAG", "Connection failure");
                         }
                         ((RecieverViewHolder) holder).recieverMsg.setText(translatedText);
-
+                        ((RecieverViewHolder) holder).emotionLableText.setText(messageModel.getSendMessageEmotionLable());
+                        ((RecieverViewHolder) holder).progressBar.setProgress(messageModel.getSendMessageEmotionScore().intValue());
 
 
 
@@ -256,12 +258,15 @@ public class ChatAdapter extends RecyclerView.Adapter {
 
 
     public class RecieverViewHolder extends RecyclerView.ViewHolder {
-        TextView recieverMsg, receiverTime;
+        TextView recieverMsg, receiverTime,emotionLableText;
+        ProgressBar progressBar;
 
         public RecieverViewHolder(@NonNull View itemView) {
             super(itemView);
             recieverMsg = itemView.findViewById(R.id.reciverText);
             receiverTime = itemView.findViewById(R.id.receiverTime);
+            emotionLableText=itemView.findViewById(R.id.emotionLableText);
+            progressBar=itemView.findViewById(R.id.progressBar);
 
         }
     }
