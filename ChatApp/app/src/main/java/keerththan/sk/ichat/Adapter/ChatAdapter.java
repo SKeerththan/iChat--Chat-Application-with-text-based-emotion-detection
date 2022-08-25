@@ -16,6 +16,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.translate.Translate;
 import com.google.cloud.translate.TranslateOptions;
@@ -156,16 +157,38 @@ public class ChatAdapter extends RecyclerView.Adapter {
                             Log.i("TAG", "Connection failure");
                         }
                         ((RecieverViewHolder) holder).recieverMsg.setText(translatedText);
-                        ((RecieverViewHolder) holder).emotionLableText.setText(messageModel.getSendMessageEmotionLable());
+                        ((RecieverViewHolder) holder).emotionLableText.setText(messageModel.getSendMessageEmotionLable()+": "+(Math.round(messageModel.getSendMessageEmotionScore()*100)/100) +"% ");
                         ((RecieverViewHolder) holder).progressBar.setProgress(messageModel.getSendMessageEmotionScore().intValue());
-
-
-
 
                         Date date = new Date(messageModel.getTimestamp());
                         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("h:mm a");
                         String strDate = simpleDateFormat.format(date);
                         ((RecieverViewHolder) holder).receiverTime.setText(strDate);
+
+
+
+
+
+
+
+
+//                        database.getReference().child("Chats").child(senderRoom).push().setValue(messageModel).addOnSuccessListener(new OnSuccessListener<Void>() {
+//
+//
+//                            @Override
+//                            public void onSuccess(Void unused) {
+//
+//
+//                                database.getReference().child("Chats").child(receiverRoom).push().setValue(messageModel).addOnSuccessListener(new OnSuccessListener<Void>() {
+//
+//                                    @Override
+//                                    public void onSuccess(Void unused) {
+//
+//                                    }
+//                                });
+//                            }
+//                        });
+
                     } else {
                         ((RecieverViewHolder) holder).recieverMsg.setText(messageModel.getMessage());
                         Date date = new Date(messageModel.getTimestamp());

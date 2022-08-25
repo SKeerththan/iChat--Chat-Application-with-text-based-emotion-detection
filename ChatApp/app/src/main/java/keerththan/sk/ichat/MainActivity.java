@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     FirebaseAuth mAuth;
     FirebaseDatabase database;
     String globalUserLanguage ;
+    Users users;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +38,10 @@ public class MainActivity extends AppCompatActivity {
 
         binding.viewPager.setAdapter(new FragmentAdapter(getSupportFragmentManager()));
         binding.taayout.setupWithViewPager(binding.viewPager);
+
+
+
+
 
 
 

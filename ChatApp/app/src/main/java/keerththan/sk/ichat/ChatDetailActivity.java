@@ -49,8 +49,8 @@ public class ChatDetailActivity extends AppCompatActivity {
     String recId;
     private boolean connected;
     Translate translate;
-String emotionLable="";
-Float emotionScore;
+    String emotionLable="";
+    Float emotionScore;
 
 
     private String originalText;
@@ -134,54 +134,51 @@ Float emotionScore;
             @Override
             public void onClick(View view) {
                 String message = binding.enterMessage.getText().toString();
-                chatAdapter.translateToEnglish(message);
+                if (message.isEmpty() || message.equals("")|| message.equals(null)){
 
-//                final MessageModel model = new MessageModel(senderId, message,engTranslatedText);
-//                model.setTimestamp(new Date().getTime());
+                }else {
+                    chatAdapter.translateToEnglish(message);
 
-
-                if (! Python.isStarted()) {
-                    Python.start(new AndroidPlatform(ChatDetailActivity.this));
-                }
-                Python py = Python.getInstance();
-                PyObject pyobj =py.getModule("EmotionDetectionScript");
-                PyObject obj =pyobj.callAttr("main",engTranslatedText);
-
-
-                Log.i("TAG", obj.asList().get(0).toString());
-
-                emotionLable = obj.asList().get(0).toString();
-                emotionScore =obj.asList().get(1).toFloat();
-                //float emotionScoreRounded= Math.round(emotionScore*10000)/100;
-                emotionScore=emotionScore*100;
-
-                final MessageModel model = new MessageModel(senderId, message,engTranslatedText,emotionLable,emotionScore);
-                model.setTimestamp(new Date().getTime());
-
-
-
-
-
-
-                binding.enterMessage.setText("");
-
-
-                database.getReference().child("Chats").child(senderRoom).push().setValue(model).addOnSuccessListener(new OnSuccessListener<Void>() {
-
-
-                    @Override
-                    public void onSuccess(Void unused) {
-
-
-                        database.getReference().child("Chats").child(receiverRoom).push().setValue(model).addOnSuccessListener(new OnSuccessListener<Void>() {
-
-                            @Override
-                            public void onSuccess(Void unused) {
-
-                            }
-                        });
+                    if (! Python.isStarted()) {
+                        Python.start(new AndroidPlatform(ChatDetailActivity.this));
                     }
-                });
+                    Python py = Python.getInstance();
+                    PyObject pyobj =py.getModule("EmotionDetectionScript");
+                    PyObject obj =pyobj.callAttr("main",engTranslatedText);
+                    emotionLable = obj.asList().get(0).toString();
+                    emotionScore =obj.asList().get(1).toFloat();
+                    //float emotionScoreRounded= Math.round(emotionScore*10000)/100;
+                    emotionScore=emotionScore*100;
+
+                    final MessageModel model = new MessageModel(senderId, message,engTranslatedText,emotionLable,emotionScore);
+                    model.setTimestamp(new Date().getTime());
+
+
+
+
+
+
+                    binding.enterMessage.setText("");
+
+
+                    database.getReference().child("Chats").child(senderRoom).push().setValue(model).addOnSuccessListener(new OnSuccessListener<Void>() {
+
+
+                        @Override
+                        public void onSuccess(Void unused) {
+
+
+                            database.getReference().child("Chats").child(receiverRoom).push().setValue(model).addOnSuccessListener(new OnSuccessListener<Void>() {
+
+                                @Override
+                                public void onSuccess(Void unused) {
+
+                                }
+                            });
+                        }
+                    });
+                }
+
 
             }
         });

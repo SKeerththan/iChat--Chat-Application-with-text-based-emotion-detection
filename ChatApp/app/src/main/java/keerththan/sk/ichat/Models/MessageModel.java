@@ -7,6 +7,16 @@ public class MessageModel {
     Float sendMessageEmotionScore;
     String engTranslatedText;
 
+    public String getUserTranslation() {
+        return userTranslation;
+    }
+
+    public void setUserTranslation(String userTranslation) {
+        this.userTranslation = userTranslation;
+    }
+
+    String userTranslation;
+
     public MessageModel(String translatedMessageReciever) {
         this.translatedMessageReciever = translatedMessageReciever;
     }
@@ -42,6 +52,18 @@ public class MessageModel {
         this.sendMessageEmotionLable =sendMessageEmotionLable;
         this.sendMessageEmotionScore=sendMessageEmotionScore;
     }
+
+//    public MessageModel(String uId, String message) {
+//        this.uId = uId;
+//        this.message = message;
+//
+//    }
+//    public MessageModel(String engTranslatedText,String sendMessageEmotionLable, Float sendMessageEmotionScore) {
+//
+//        this.engTranslatedText=engTranslatedText;
+//        this.sendMessageEmotionLable =sendMessageEmotionLable;
+//        this.sendMessageEmotionScore=sendMessageEmotionScore;
+//    }
 
 
     public Float getSendMessageEmotionScore() {

@@ -148,6 +148,7 @@ public class SignInActivity extends AppCompatActivity {
                     users.setUserId(user.getUid());
                     users.setUsername(user.getDisplayName());
                     users.setProfilePic(user.getPhotoUrl().toString());
+                    users.setTranslateLanguage("English-en");
                     firebaseDatabase.getReference().child("Users").child(user.getUid()).setValue(users);
 
 

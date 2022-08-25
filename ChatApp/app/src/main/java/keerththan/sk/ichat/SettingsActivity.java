@@ -22,6 +22,7 @@ import com.google.cloud.translate.TranslateOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
@@ -49,9 +50,15 @@ public class SettingsActivity extends AppCompatActivity {
     List<String> languageList;
     List<Language> languages;
     Users users;
+String selectedUserLanguage="Choose your language";
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
 
         super.onCreate(savedInstanceState);
         binding = ActivitySettingsBinding.inflate(getLayoutInflater());
@@ -68,6 +75,8 @@ public class SettingsActivity extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
 
 
+
+
         languages = translate.listSupportedLanguages();
         languageList = new ArrayList<String>();
         for (Language language : languages) {
@@ -75,25 +84,6 @@ public class SettingsActivity extends AppCompatActivity {
             languageList.add(language.getName() + "-" + language.getCode());
         }
 
-
-//        database.getReference().child("Users").child(FirebaseAuth.getInstance().getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                 users = snapshot.getValue(Users.class);
-//                languageList.add(users.getTranslateLanguage());
-//
-//
-//                //languageList.add(0, users.getTranslateLanguage());
-//                // userLanguage = users.getTranslateLanguage();
-//
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//
-//            }
-//        });
-        //  Log.i("TAG","Your defaul language is " + users.getTranslateLanguage());
 
 
         binding.backArrow.setOnClickListener(new View.OnClickListener() {
@@ -138,6 +128,8 @@ public class SettingsActivity extends AppCompatActivity {
 
                 binding.etStatus.setText(users.getStatus());
                 binding.txtUsername.setText(users.getUsername());
+
+
                 //x = users.getTranslateLanguage();
 
 
@@ -169,7 +161,10 @@ public class SettingsActivity extends AppCompatActivity {
                 startActivityForResult(intent, 25);
             }
         });
-        languageList.add(0,"Choose a language..!");
+
+
+
+        languageList.add(0,selectedUserLanguage);
 
         spinner = findViewById(R.id.languageDropdown);
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, languageList);
@@ -180,6 +175,7 @@ public class SettingsActivity extends AppCompatActivity {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
                 translateLanguage = adapterView.getItemAtPosition(i).toString();
 
                 //adapterView.getItemAtPosition(i).equals("Choose City");
