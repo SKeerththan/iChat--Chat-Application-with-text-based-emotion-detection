@@ -231,6 +231,7 @@ public class ChatAdapter extends RecyclerView.Adapter {
 
 
             //Get credentials:
+
             final GoogleCredentials myCredentials = GoogleCredentials.fromStream(is);
 
             //Set credentials and get translate service:
