@@ -8,17 +8,17 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="colorPrimary">#0b6156</color>
-    <color name="colorPrimaryDark">#095049</color>
-    <color name="colorAccent">#03DAC5</color>
+    <color name="colorPrimary">#FB9C12</color>
+    <color name="colorPrimaryDark">#FD9500</color>
+    <color name="colorAccent">#F8AC3E</color>
     <color name="lightGrey">#EDEDED</color>
-    <color name="whatsAppColor">#0b6156</color>
+    <color name="whatsAppColor">#FD9500</color>
     <color name="red">#9F0B0B</color>
-    <color name="status_background">#009688</color>
-    <color name="chat_background">#8BC34A</color>
+    <color name="status_background">#F8AC3E</color>
+    <color name="chat_background">#F1DF37</color>
     <color name="fb_color">#3c5793</color>
-    <color name="lightgreen">#e5ffcc</color>
-    <color name="settingsIconColor">#0E8374</color>
+    <color name="lightgreen">#F6C269</color>
+    <color name="settingsIconColor">#FB9C12</color>
     <color name="grayBackground">#BCBCBC</color>
     <color name="chatbackground">#AAAAAA</color>
 

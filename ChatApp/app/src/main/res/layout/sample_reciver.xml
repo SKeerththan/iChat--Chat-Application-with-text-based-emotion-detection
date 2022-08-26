@@ -25,7 +25,15 @@
         android:inputType="textLongMessage|textMultiLine"
         android:maxWidth="270dp"
         android:minWidth="50dp"
-        android:text="TextView"
+
+
+        android:text="Message Loading..."
+        android:textColor="@color/black"
+
+        android:textSize="15dp"
+        android:textStyle=""
+
+
         app:layout_constraintBottom_toTopOf="@+id/receiverTime"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
         app:layout_constraintTop_toTopOf="parent"

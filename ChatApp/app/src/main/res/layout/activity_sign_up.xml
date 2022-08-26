@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/w1"
+    android:background="@drawable/bg_1"
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".SignUpActivity">
@@ -21,9 +21,9 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@drawable/ic_whatsapp" />
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/ic_ichat1" />
 
         <EditText
             android:id="@+id/txtUsername"

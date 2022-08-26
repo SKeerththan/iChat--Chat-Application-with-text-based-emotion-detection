@@ -36,7 +36,14 @@
             android:inputType="textLongMessage|textMultiLine"
             android:maxWidth="270dp"
             android:minWidth="50dp"
-            android:text="ABCD"
+            android:text="Message Loading..."
+            android:textColor="@color/white"
+
+            android:textSize="15dp"
+            android:textStyle="bold"
+
+
+
             app:layout_constraintBottom_toTopOf="@+id/senderTime"
             app:layout_constraintEnd_toStartOf="@+id/guideline2"
             app:layout_constraintStart_toStartOf="parent"
