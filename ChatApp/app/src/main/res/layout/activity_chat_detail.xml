@@ -35,8 +35,9 @@
             android:layout_weight="1"
             android:background="@drawable/bg_et_message"
             android:ems="10"
-
+            android:textColor="@color/black"
             android:hint="Enter your message"
+            android:textColorHint="@color/lightGrey"
             android:inputType="textPersonName"
             android:padding="10dp" />
 

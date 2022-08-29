@@ -34,6 +34,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import keerththan.sk.ichat.ChatDetailActivity;
+import keerththan.sk.ichat.GroupChatActivity;
 import keerththan.sk.ichat.Models.MessageModel;
 import keerththan.sk.ichat.Models.Users;
 import keerththan.sk.ichat.R;
@@ -271,6 +272,21 @@ public class ChatAdapter extends RecyclerView.Adapter {
         //Translated text and original text are set to TextViews:
         Log.i("TAG", "translation success");
         ChatDetailActivity.engTranslatedText = translation.getTranslatedText();
+
+    }
+    public void translateToEnglishGroupchat(String inputChatMessage) {
+        checkInternetConnection();
+        getTranslateService();
+
+        //Get input text to be translated:
+        String languageCode ="en";
+        originalText = inputChatMessage;
+        Translation translation = translate.translate(inputChatMessage, Translate.TranslateOption.targetLanguage(languageCode), Translate.TranslateOption.model("base"));
+
+
+        //Translated text and original text are set to TextViews:
+        Log.i("TAG", "translation success");
+        GroupChatActivity.engTranslatedText = translation.getTranslatedText();
 
     }
 

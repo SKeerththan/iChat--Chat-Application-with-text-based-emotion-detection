@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/w1"
+    android:background="@drawable/setting_bg"
     tools:context=".SettingsActivity">
 
     <ImageView
@@ -26,7 +26,8 @@
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        >
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profile_image"
@@ -119,22 +120,22 @@
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
-<!--            <EditText-->
-<!--                android:id="@+id/translateLanguage"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:hint="Enter Your Language"-->
-<!--                android:inputType="textPersonName"-->
-<!--                android:textColor="@color/white"-->
-<!--                android:textColorHint="#FFcccc" />-->
+            <!--            <EditText-->
+            <!--                android:id="@+id/translateLanguage"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:hint="Enter Your Language"-->
+            <!--                android:inputType="textPersonName"-->
+            <!--                android:textColor="@color/white"-->
+            <!--                android:textColorHint="#FFcccc" />-->
 
             <Spinner
                 android:id="@+id/languageDropdown"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/btn_bg"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="2dp"
+                android:background="@drawable/btn_bg"
                 android:padding="8dp"
                 android:tooltipText="@string/app_name"
 
@@ -150,8 +151,9 @@
             android:layout_marginBottom="5dp"
             android:background="@drawable/btn_bg"
             android:padding="5dp"
-            android:text="Save"
+            android:text="Update"
             android:textAllCaps="false"
+            android:textStyle="bold"
             android:textColor="@color/colorPrimary" />
 
     </LinearLayout>

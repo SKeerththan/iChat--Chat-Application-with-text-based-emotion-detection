@@ -21,8 +21,8 @@
         android:layout_marginLeft="5dp"
         android:padding="5dp"
         android:src="@drawable/avatar3"
-        app:civ_border_color="#FF000000"
-        app:civ_border_width="2dp" />
+        app:civ_border_color="#FFFFFF"
+        app:civ_border_width="3dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -42,7 +42,8 @@
             android:text="Keerththan"
             android:textColor="@color/black"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            />
 
         <TextView
             android:layout_width="match_parent"
@@ -50,7 +51,9 @@
             android:id="@+id/lastMessage"
             android:paddingTop="2dp"
             android:paddingBottom="2dp"
-            android:text="lastMessage"/>
+            android:text="lastMessage"
+            android:textColor="@color/black"
+            android:textStyle="bold|italic"/>
 
 
     </LinearLayout>

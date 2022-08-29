@@ -50,7 +50,7 @@ public class ChatDetailActivity extends AppCompatActivity {
     private boolean connected;
     Translate translate;
     String emotionLable="";
-    Float emotionScore;
+    Float emotionScore=0.00F;
 
 
     private String originalText;

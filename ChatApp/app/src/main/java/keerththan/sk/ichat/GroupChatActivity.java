@@ -9,6 +9,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import com.chaquo.python.PyObject;
+import com.chaquo.python.Python;
+import com.chaquo.python.android.AndroidPlatform;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -26,7 +29,9 @@ import keerththan.sk.ichat.databinding.ActivityGroupChatBinding;
 public class GroupChatActivity extends AppCompatActivity {
 
     ActivityGroupChatBinding binding;
-    String engTranslatedText;
+    public static String  engTranslatedText="";
+    String emotionLable="";
+    Float emotionScore=0.00F;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +39,7 @@ public class GroupChatActivity extends AppCompatActivity {
 
         binding = ActivityGroupChatBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
 
 
 
@@ -49,6 +55,17 @@ public class GroupChatActivity extends AppCompatActivity {
 
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
         final ArrayList<MessageModel> messageModels = new ArrayList<>();
+
+
+
+
+
+        String receiverId = getIntent().getStringExtra("userId");
+        final ChatAdapter chatAdapter = new ChatAdapter(messageModels, this, receiverId);
+
+
+
+
 
         final String senderId = FirebaseAuth.getInstance().getUid();
         binding.userName.setText("World Chat");
@@ -85,11 +102,20 @@ public class GroupChatActivity extends AppCompatActivity {
             public void onClick(View view) {
                 final String messsage = binding.enterMessage.getText().toString();
 
-                String emotionLable=null;
-                Float emotionScore=null;
+                chatAdapter.translateToEnglishGroupchat(messsage);
+                if (! Python.isStarted()) {
+                    Python.start(new AndroidPlatform(GroupChatActivity.this));
+                }
+                Python py = Python.getInstance();
+                PyObject pyobj =py.getModule("EmotionDetectionScript");
+                PyObject obj =pyobj.callAttr("main",engTranslatedText);
+                emotionLable = obj.asList().get(0).toString();
+                emotionScore =obj.asList().get(1).toFloat();
+                //float emotionScoreRounded= Math.round(emotionScore*10000)/100;
+                emotionScore=emotionScore*100;
 
 
-                final MessageModel model = new MessageModel(senderId, messsage, engTranslatedText,emotionLable,emotionScore);
+                final MessageModel model = new MessageModel(senderId ,messsage, engTranslatedText,emotionLable,emotionScore);
                 model.setTimestamp(new Date().getTime());
 
                 binding.enterMessage.setText("");

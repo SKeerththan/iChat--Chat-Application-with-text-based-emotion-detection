@@ -27,8 +27,8 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
             android:src="@drawable/ic_ichat1" />
 
         <EditText
@@ -42,7 +42,7 @@
             android:inputType="textEmailAddress"
             android:padding="9dp"
             android:textColor="@color/white"
-            android:textColorHint="@color/chatbackground"
+            android:textColorHint="#FFFF"
             />
         <EditText
             android:id="@+id/txtPassword"
@@ -55,7 +55,7 @@
             android:inputType="textPassword"
             android:padding="9dp"
             android:textColor="@color/white"
-            android:textColorHint="@color/chatbackground"
+            android:textColorHint="#FFFF"
             />
         <TextView
             android:layout_width="wrap_content"
@@ -67,13 +67,13 @@
             android:gravity="right"
             android:padding="5dp"
             android:textSize="16sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold|italic"/>
         <Button
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:id="@+id/btnSignIn"
             android:layout_marginTop="10dp"
-            android:backgroundTint="@color/design_default_color_secondary_variant"
+            android:backgroundTint="@color/colorPrimaryDark"
             android:padding="15dp"
             android:text="Sign In"
             android:textAllCaps="false"
@@ -111,7 +111,7 @@
             android:padding="15dp"
             android:text="Facebook"
             android:textAllCaps="false"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             app:backgroundTint="@color/fb_color"
             app:cornerRadius="8dp"/>
 
@@ -126,8 +126,9 @@
             android:id="@+id/txtSignUpPhone"
             android:layout_marginTop="15dp"
             android:text="Sign Up with Phone"
-            android:textColor="@color/white"
-            android:textSize="18dp"/>
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="18dp"
+            android:textStyle="bold|italic"/>
 
 
 

@@ -46,6 +46,7 @@
         android:layout_marginRight="4dp"
         android:layout_marginBottom="3dp"
         android:text="12.00pm"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
 
@@ -59,7 +60,8 @@
         android:layout_marginBottom="3dp"
         android:maxWidth="270dp"
         android:minWidth="50dp"
-        android:text="Loading"
+        android:text="Loading..."
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
 
         app:layout_constraintStart_toStartOf="@+id/guideline3" />
