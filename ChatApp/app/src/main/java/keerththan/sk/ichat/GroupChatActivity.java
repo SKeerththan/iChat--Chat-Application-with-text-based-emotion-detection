@@ -83,6 +83,7 @@ public class GroupChatActivity extends AppCompatActivity {
                 messageModels.clear();
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                     MessageModel model = dataSnapshot.getValue(MessageModel.class);
+
                     messageModels.add(model);
 
                 }
@@ -95,6 +96,21 @@ public class GroupChatActivity extends AppCompatActivity {
 
             }
         });
+//        database.getReference().child("Users").addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+//                    MessageModel model = dataSnapshot.getValue(MessageModel.class);
+//                    messageModels.add(model);
+//
+//                }
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//
+//            }
+//        })
 
 
         binding.send.setOnClickListener(new View.OnClickListener() {
@@ -102,29 +118,36 @@ public class GroupChatActivity extends AppCompatActivity {
             public void onClick(View view) {
                 final String messsage = binding.enterMessage.getText().toString();
 
-                chatAdapter.translateToEnglishGroupchat(messsage);
-                if (! Python.isStarted()) {
-                    Python.start(new AndroidPlatform(GroupChatActivity.this));
-                }
-                Python py = Python.getInstance();
-                PyObject pyobj =py.getModule("EmotionDetectionScript");
-                PyObject obj =pyobj.callAttr("main",engTranslatedText);
-                emotionLable = obj.asList().get(0).toString();
-                emotionScore =obj.asList().get(1).toFloat();
-                //float emotionScoreRounded= Math.round(emotionScore*10000)/100;
-                emotionScore=emotionScore*100;
-
-
-                final MessageModel model = new MessageModel(senderId ,messsage, engTranslatedText,emotionLable,emotionScore);
-                model.setTimestamp(new Date().getTime());
-
-                binding.enterMessage.setText("");
-                database.getReference().child("World Chat").push().setValue(model).addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void unused) {
-                        Toast.makeText(GroupChatActivity.this, "Message Sent.", Toast.LENGTH_SHORT).show();
+                if (!messsage.isEmpty() && !messsage.equals("")&& !messsage.equals(null)){
+                    chatAdapter.translateToEnglishGroupchat(messsage);
+                    if (! Python.isStarted()) {
+                        Python.start(new AndroidPlatform(GroupChatActivity.this));
                     }
-                });
+                    Python py = Python.getInstance();
+                    PyObject pyobj =py.getModule("EmotionDetectionScript");
+                    PyObject obj =pyobj.callAttr("main",engTranslatedText);
+                    emotionLable = obj.asList().get(0).toString();
+                    emotionScore =obj.asList().get(1).toFloat();
+                    //float emotionScoreRounded= Math.round(emotionScore*10000)/100;
+                    emotionScore=emotionScore*100;
+
+
+                    final MessageModel model = new MessageModel(senderId ,messsage, engTranslatedText,emotionLable,emotionScore);
+                    model.setTimestamp(new Date().getTime());
+
+                    binding.enterMessage.setText("");
+                    database.getReference().child("World Chat").push().setValue(model).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void unused) {
+                            Toast.makeText(GroupChatActivity.this, "Message Sent.", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+
+                } else {
+
+                }
+
+
 
 
             }

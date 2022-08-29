@@ -6,6 +6,17 @@ public class MessageModel {
     String language ;
     Float sendMessageEmotionScore;
     String engTranslatedText;
+    String groupChatMessageOwner;
+
+    public String getGroupChatMessageOwner() {
+        return groupChatMessageOwner;
+    }
+
+    public void setGroupChatMessageOwner(String groupChatMessageOwner) {
+        this.groupChatMessageOwner = groupChatMessageOwner;
+    }
+
+
 
     public String getUserTranslation() {
         return userTranslation;
