@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_1"
+    android:background="@drawable/log3"
 
     android:gravity="center"
     android:orientation="vertical"
@@ -43,6 +43,7 @@
             android:padding="9dp"
             android:textColor="@color/white"
             android:textColorHint="#FFFF"
+            android:textStyle="bold"
             />
         <EditText
             android:id="@+id/txtPassword"
@@ -56,6 +57,8 @@
             android:padding="9dp"
             android:textColor="@color/white"
             android:textColorHint="#FFFF"
+            android:textStyle="bold"
+
             />
         <TextView
             android:layout_width="wrap_content"
@@ -126,9 +129,10 @@
             android:id="@+id/txtSignUpPhone"
             android:layout_marginTop="15dp"
             android:text="Sign Up with Phone"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/white"
             android:textSize="18dp"
-            android:textStyle="bold|italic"/>
+            android:textStyle="bold|italic"
+            android:shadowRadius="@integer/material_motion_duration_short_2"/>
 
 
 

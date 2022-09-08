@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".GroupChatActivity"
-    android:background="@drawable/bg_5">
+    android:background="@drawable/w2">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/chatRecyclerView"
@@ -34,7 +34,7 @@
             android:ems="10"
             android:textColor="@color/black"
             android:hint="Enter your message"
-            android:textColorHint="@color/lightGrey"
+            android:textColorHint="@color/chatbackground"
             android:inputType="textPersonName"
             android:padding="10dp" />
 
@@ -82,8 +82,8 @@
                 android:layout_marginLeft="5dp"
                 android:padding="5dp"
                 android:src="@drawable/avatar3"
-                app:civ_border_color="#FF000000"
-                app:civ_border_width="2dp"
+                app:civ_border_color="#FFFFFF"
+                app:civ_border_width="3dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/backArrow"
 
@@ -98,6 +98,7 @@
                 android:text="Username"
                 android:textSize="18sp"
                 android:textStyle="bold"
+                android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/profile_image"
                 app:layout_constraintTop_toTopOf="parent" />

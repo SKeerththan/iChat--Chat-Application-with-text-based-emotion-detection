@@ -16,8 +16,9 @@
 
 
 
-                    android:endColor="#FBC519"
-                    android:startColor="#F89E1D"
+
+                    android:endColor="#CDDC39"
+                    android:startColor="#FFC107"
                     />
             </shape>
         </clip>

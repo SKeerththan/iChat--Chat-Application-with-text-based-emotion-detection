@@ -7,7 +7,8 @@
 
     tools:context=".ChatDetailActivity"
 
-    android:background="@drawable/bg_5">
+    android:background="@drawable/w2">
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/chatRecyclerView"
@@ -16,8 +17,10 @@
         android:layout_above="@+id/liner"
         android:layout_below="@+id/toolbar"
 
-        android:layout_marginBottom="3dp" />
-
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="0dp" />
 
     <LinearLayout
         android:id="@+id/liner"
@@ -36,8 +39,8 @@
             android:background="@drawable/bg_et_message"
             android:ems="10"
             android:textColor="@color/black"
-            android:hint="Enter your message"
-            android:textColorHint="@color/lightGrey"
+            android:hint="Enter your message...!"
+            android:textColorHint="@color/chatbackground"
             android:inputType="textPersonName"
             android:padding="10dp" />
 
@@ -87,7 +90,7 @@
                 android:layout_marginLeft="5dp"
                 android:padding="5dp"
                 android:src="@drawable/avatar3"
-                app:civ_border_color="#FF000000"
+                app:civ_border_color="#FFFFFF"
                 app:civ_border_width="2dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/backArrow"
@@ -103,6 +106,7 @@
                 android:text="Username"
                 android:textSize="18sp"
                 android:textStyle="bold"
+                android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/profile_image"
                 app:layout_constraintTop_toTopOf="parent" />

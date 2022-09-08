@@ -159,28 +159,14 @@ public class ChatAdapter extends RecyclerView.Adapter {
                             Log.i("TAG", "Connection failure");
                         }
 
-                        database.getReference().child("Users").child(messageModel.getuId()).child("username").addValueEventListener(new ValueEventListener() {
-                            @Override
-                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        ((RecieverViewHolder) holder).recieverMsg.setText(translatedText);
+                        ((RecieverViewHolder) holder).emotionLableText.setText(messageModel.getSendMessageEmotionLable()+": "+(Math.round(messageModel.getSendMessageEmotionScore()*100)/100) +"% ");
+                        ((RecieverViewHolder) holder).progressBar.setProgress(messageModel.getSendMessageEmotionScore().intValue());
 
-                                ((RecieverViewHolder) holder).recieverMsg.setText(snapshot.getValue().toString()+": "+translatedText);
-                                ((RecieverViewHolder) holder).emotionLableText.setText(messageModel.getSendMessageEmotionLable()+": "+(Math.round(messageModel.getSendMessageEmotionScore()*100)/100) +"% ");
-                                ((RecieverViewHolder) holder).progressBar.setProgress(messageModel.getSendMessageEmotionScore().intValue());
-
-                                Date date = new Date(messageModel.getTimestamp());
-                                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("h:mm a");
-                                String strDate = simpleDateFormat.format(date);
-                                ((RecieverViewHolder) holder).receiverTime.setText(strDate);
-
-                            }
-
-                            @Override
-                            public void onCancelled(@NonNull DatabaseError error) {
-
-                            }
-                        });
-
-
+                        Date date = new Date(messageModel.getTimestamp());
+                        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("h:mm a");
+                        String strDate = simpleDateFormat.format(date);
+                        ((RecieverViewHolder) holder).receiverTime.setText(strDate);
 
 
 
