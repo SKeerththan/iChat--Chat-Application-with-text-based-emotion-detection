@@ -32,12 +32,12 @@
             android:layout_marginTop="15dp"
             android:layout_marginBottom="15dp"
             android:ems="10"
-            android:hint="Username"
+            android:hint="example"
             android:inputType="textPersonName"
             android:padding="9dp"
             android:textColor="@color/lightGrey"
-            android:textColorHint="#FFFF"
-            android:textStyle="bold"/>
+            android:textColorHint="#B24E4D4D"
+           />
 
         <EditText
             android:id="@+id/txtEmail"
@@ -45,24 +45,24 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:ems="10"
-            android:hint="Email"
+            android:hint="example@example.com"
             android:inputType="textEmailAddress"
             android:padding="9dp"
             android:textColor="@color/lightGrey"
-            android:textColorHint="#FFF"
-            android:textStyle="bold"/>
+            android:textColorHint="#B24E4D4D"
+            />
 
         <EditText
             android:id="@+id/txtPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Password"
+            android:hint="password123"
             android:inputType="textPassword"
             android:padding="9dp"
             android:textColor="@color/lightGrey"
-            android:textColorHint="#FFF"
-            android:textStyle="bold"/>
+            android:textColorHint="#B24E4D4D"
+           />
 
 
         <TextView

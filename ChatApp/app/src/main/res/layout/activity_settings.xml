@@ -8,7 +8,6 @@
     tools:context=".SettingsActivity">
 
 
-
     <ImageView
         android:id="@+id/backArrow"
         android:layout_width="30dp"
@@ -89,10 +88,10 @@
                 android:id="@+id/txtUsername"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Enter you name !"
+                android:hint="Username"
                 android:inputType="textPersonName"
                 android:textColor="@color/white"
-                android:textColorHint="#DDF8F8F8" />
+                android:textColorHint="#B24E4D4D" />
         </LinearLayout>
 
         <LinearLayout
@@ -115,10 +114,10 @@
                 android:id="@+id/etStatus"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="About!"
+                android:hint="I am a...!"
                 android:inputType="textPersonName"
                 android:textColor="@color/white"
-                android:textColorHint="#DDF8F8F8" />
+                android:textColorHint="#B24E4D4D" />
 
 
         </LinearLayout>
